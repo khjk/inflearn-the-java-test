@@ -20,9 +20,8 @@ class Tagging {
     @DisplayName("스터디 만들기 fast")
     @Tag("fast")
     void create_new_study() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> new Study(10));
-        String message = exception.getMessage();
-        assertEquals("limit은 0보다 커야 한다.", exception.getMessage());
+        Study test = new Study(100);
+        assertThat(test.getLimit()).isGreaterThan(9);
 
         System.out.println("create");
     }
