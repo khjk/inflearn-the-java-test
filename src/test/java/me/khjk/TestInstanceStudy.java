@@ -1,13 +1,12 @@
 package me.khjk;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS) //Test Instance를 클래스당 한개만 만듬
-class TestInstanceStudy {
+//@TestInstance(TestInstance.Lifecycle.PER_CLASS) //Test Instance를 클래스당 한개만 만듬
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class TestInstanceStudy {
 
     int value = 1;
 
@@ -16,6 +15,7 @@ class TestInstanceStudy {
         System.out.println("beforeAll");
     }
 
+    @Order(2) //spring이 아닌 Junit이 제공하는거 써야함
     @FastTest
     @DisplayName("스터디 만들기 fast")
     void create_new_study() {
@@ -30,7 +30,7 @@ class TestInstanceStudy {
 
         System.out.println("create" + value++);
     }
-
+    @Order(1)
     @SlowTest
     @DisplayName("스터디 만들기 slow")
     void create_new_study_again() {
