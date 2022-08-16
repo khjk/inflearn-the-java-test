@@ -15,7 +15,7 @@ class Tagging {
     /**
      * 태그를 달아서 특정 태그의 테스트만 실행가능
      * 1. Edit Configuration > Test Kind를 Class에서 Tags로 변경 > TagExpressions 에 fast라고 입력
-     * 2. 메이븐 pom.xml에서 profile 설정
+     * 2. 메이븐 에서 profile 설정
      * 클래스 내의 전체 테스트가 실행 되는게 아닌 fast 태그를 가진 테스트 케이스만 실행 된다
      * */
     @Test
