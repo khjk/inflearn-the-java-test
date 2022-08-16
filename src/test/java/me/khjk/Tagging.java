@@ -2,12 +2,14 @@ package me.khjk;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.condition.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 
+@ExtendWith(FindSlowTestExtension.class) //실행 시간 측정해서 초과하면 알림메시지 띄우는 내가 만든 확장팩 사용
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class Tagging {
     /**
@@ -19,10 +21,10 @@ class Tagging {
     @Test
     @DisplayName("스터디 만들기 fast")
     @Tag("fast")
-    void create_new_study() {
+    void create_new_study() throws InterruptedException {
         Study test = new Study(100);
         assertThat(test.getLimit()).isGreaterThan(9);
-
+        Thread.sleep(10000); //Please consider mark method [create_new_study] with @SlowTest. 알림 발생
         System.out.println("create");
     }
 
