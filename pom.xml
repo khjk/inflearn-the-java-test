@@ -18,12 +18,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <!--exclusions-->
+                <!--exclusion--> <!-- junit4 실행 가능 제외-->
+                    <!--groupId>org.junit.vintage</groupId-->
+                    <!--artifactId>junit-vintage-engine</artifactId-->
+                <!--/exclusion-->
+            <!--/exclusions-->
         </dependency>
     </dependencies>
 
