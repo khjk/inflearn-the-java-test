@@ -73,6 +73,7 @@ class RepeatTest {
     void repeat_test_using_csvSource3(@AggregateWith(StudyAggregator.class) Study study) {
         System.out.println(study);
     }
+
     /**
      * argument가 여러개면 ArgumentsAggregator을 생성
      * */

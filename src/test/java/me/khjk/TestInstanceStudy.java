@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-//@TestInstance(TestInstance.Lifecycle.PER_CLASS) //Test Instance를 클래스당 한개만 만듬
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) //Test Instance를 클래스당 한개만 만듬
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestInstanceStudy {
 
