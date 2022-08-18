@@ -25,6 +25,14 @@ public class MockitoTest {
 
     @Test
     void createNewStudy() {
+        /**
+         * BDD : 애플리케이션이 어떻게 "행동"해야 하는지에 대한 공통된 이해를 구성하는 방법으로, TDD에서 창안했다.
+         *
+         * 행동에 대한 스펙
+         * - Title
+         * - Narrative ( As a / I want / so that )
+         * - Acceptance criteria ( Given / When / Then )
+         * */
         // Given
         StudyService studyService = new StudyService(memberService, studyRepository);
         assertNotNull(studyService);
