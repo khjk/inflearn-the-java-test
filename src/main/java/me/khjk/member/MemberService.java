@@ -1,6 +1,7 @@
 package me.khjk.member;
 
 import me.khjk.domain.Member;
+import me.khjk.domain.Study;
 
 import java.util.Optional;
 
@@ -10,4 +11,6 @@ public interface MemberService {
     Optional<Member> findById(Long memberId);
 
     void validate(Long memberId);
+
+    void notify(Study study);
 }
