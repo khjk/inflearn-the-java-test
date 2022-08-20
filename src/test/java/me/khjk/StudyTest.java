@@ -13,6 +13,14 @@ import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
+    /**
+     * 1. 실제 값이 기대한 값과 같은지 확인 : assertEquals(expected, actual)
+     * 2. 값이 null이 아닌지 확인 : assertNotNull(actual)
+     * 3. 다음 조건이 참(true)인지 확인 : assertTrue(boolean)
+     * 4. 모든 확인 구문 확인 : assertAll(executables...)
+     * 5. 예외 발생 확인 : assertThrows(expectedType, executable)
+     * 6. 특정 시간 안에 실행이 완료되는지 확인 assertTimeout(duration, executable)
+     * */
 
     @Test
     @DisplayName("조건에 따라 테스트 실행하기")
