@@ -1,23 +1,61 @@
 package me.khjk.domain;
 
+import me.khjk.StudyStatus;
+
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class Study {
     public Member owner;
-    public int limit;
+    private Long id;
+    private StudyStatus status = StudyStatus.DRAFT;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public StudyStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(StudyStatus status) {
+        this.status = status;
+    }
+
+    public int getLimitCount() {
+        return limitCount;
+    }
+
+    public void setLimitCount(int limitCount) {
+        this.limitCount = limitCount;
+    }
+
+    public LocalDateTime getOpenedDateTime() {
+        return openedDateTime;
+    }
+
+    public void setOpenedDateTime(LocalDateTime openedDateTime) {
+        this.openedDateTime = openedDateTime;
+    }
+
+    public int limitCount;
     public String name;
+    private LocalDateTime openedDateTime;
 
     public Study(int limit, String name) {
-        this.limit = limit;
+        this.limitCount = limit;
         this.name = name;
     }
 
-    public int getLimit() {
-        return limit;
-    }
-
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public Study(int limit) {
+        if(limit < 0) {
+            throw new IllegalArgumentException("Limit은 0보다 커야한다.");
+        }
+        this.limitCount = limit;
     }
 
     public String getName() {
@@ -37,4 +75,8 @@ public class Study {
     }
 
 
+    public void open() {
+        this.openedDateTime = LocalDateTime.now();
+        this.status = StudyStatus.DRAFT;
+    }
 }

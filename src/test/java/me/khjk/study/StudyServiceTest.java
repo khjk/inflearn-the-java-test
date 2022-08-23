@@ -66,7 +66,8 @@ public class StudyServiceTest {
         when(memberService.findById(any())).thenReturn(Optional.of(member)).thenThrow(new RuntimeException()).thenReturn(Optional.empty());
         //1이라는 값으로 findById가 호출되면 Exception 호출되게
         when(memberService.findById(1L)).thenThrow(new RuntimeException());
-        //1이라는 값으로 validate 가 호출되면 예외를 발생시키게 Stubbing (원래는 validate 가 void 메소드이기 때문에 아무일도 안일어 남 (4번룰))
+        //1이라는 값으로 validate 가 호출되면 예외를
+        // 발생시키게 Stubbing (원래는 validate 가 void 메소드이기 때문에 아무일도 안일어 남 (4번룰))
         doThrow(new IllegalArgumentException()).when(memberService).validate(1L);
 
         //첫번째 호출시 리턴값 stubbing 한거 확인

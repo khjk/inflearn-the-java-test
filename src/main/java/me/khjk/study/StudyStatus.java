@@ -1,4 +1,5 @@
 package me.khjk.study;
 
-public class StudyStatus {
+public enum StudyStatus {
+    DRAFT, OPENED, ENDED
 }
