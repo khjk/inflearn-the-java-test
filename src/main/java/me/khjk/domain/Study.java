@@ -1,5 +1,7 @@
 package me.khjk.domain;
 
+import java.util.Optional;
+
 public class Study {
     public Member owner;
     public int limit;
@@ -33,4 +35,6 @@ public class Study {
     public void setOwner(Member owner) {
         this.owner = owner;
     }
+
+
 }
