@@ -10,7 +10,15 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
-
+/**
+ * @DisplayNameGeneration
+ * - Method와 Class 레퍼런스를 사용해서 테스트 이름을 표기하는 방법 설정
+ * - 기본 구현체로 ReplaceUnderscores 제공
+ *
+ * @DisplayName
+ * - 어떤 테스트인지 테스트 이름을 보다 쉽게 표현할 수 있는 방법을 제공하는 애노테이션
+ * - @displayNameGeneration 보다 우선순위가 높다
+ * */
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
     /**
