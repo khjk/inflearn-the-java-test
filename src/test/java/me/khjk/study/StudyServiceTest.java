@@ -16,6 +16,12 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
+/**
+ * 1. Testcontainers : 테스트에서 도커 컨테이너를 실행할 수 있는 라이브러리  https://www.testcontainers.org/
+ * 2. JMeter : 성능 측정 및 부하 테스트 기능을 제공하는 오픈소스 자바 애플리케이션
+ * 3. Chaos Monkey : 카오스 엔지니어링 툴. 프로덕션 환경 특히 분산 시스템 환경에서 붏확실성을 파악하고 해결방안을 모색하는데 사용하는 툴
+ * 4. ArchUnit : 애플리케이션의 아키텍처를 테스트할 수 있는 오픈소스 라이브러리로, 패키지, 클래스, 레이어, 슬라이스 간의 의존성을 확인할 수 있는 기능을 제공한다.
+ * */
 @ExtendWith(MockitoExtension.class)
 public class StudyServiceTest {
 
